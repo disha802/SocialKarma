@@ -1,0 +1,97 @@
+<!-- zen.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zen Zone - SocialKarma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #a0e7e5, #b4f8c8, #fbe7c6);
+      min-height: 100vh;
+      padding: 2rem;
+      position: relative;
+    }
+    .audio-tile {
+      background-color: #ffffffcc;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease-in-out;
+    }
+    .audio-tile:hover {
+      transform: scale(1.02);
+    }
+    .dark-toggle, .home-button {
+      position: absolute;
+      top: 1rem;
+      z-index: 50;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .dark-toggle {
+      right: 1rem;
+      background: #444;
+      color: white;
+    }
+    .home-button {
+      left: 1rem;
+      background: #3b82f6;
+      color: white;
+    }
+    .dark-mode {
+      background: #0f172a;
+      color: #f1f5f9;
+    }
+    .dark-mode .audio-tile {
+      background-color: #1e293b;
+    }
+  </style>
+</head>
+<body>
+  <a href="/dashboard" class="home-button">🏠 Home</a>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌓 Toggle Zen Mode</button>
+
+  <header class="text-center mb-10">
+    <h1 class="text-3xl font-bold text-green-700">🧘‍♂️ Welcome to the Zen Zone</h1>
+    <p class="text-gray-600 mt-2">Let go of stress and tune into peace ✨</p>
+  </header>
+
+  <main class="grid gap-8 grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto">
+    <div class="audio-tile text-center">
+      <h2 class="text-xl font-semibold text-blue-600 mb-4">Ocean Waves 🌊</h2>
+      <audio controls loop class="w-full">
+        <source src="/static/audio/ocean.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <div class="audio-tile text-center">
+      <h2 class="text-xl font-semibold text-purple-600 mb-4">Chakra Balancing 🌀</h2>
+      <audio controls loop class="w-full">
+        <source src="/static/audio/chakra.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <div class="audio-tile text-center">
+      <h2 class="text-xl font-semibold text-pink-600 mb-4">Soothing Piano 🎹</h2>
+      <audio controls loop class="w-full">
+        <source src="/static/audio/piano.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </main>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
